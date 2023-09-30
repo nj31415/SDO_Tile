@@ -34,7 +34,7 @@ do
 	done
 
 	# Reset tty2
-	echo ^v^o > /dev/tty2
+	echo Q^v^o > /dev/tty2
 
 	sudo fbi -a -T 2 -noverbose -t 30 $LOCALDIR/*
 	echo "LOOP COMPLETE"
