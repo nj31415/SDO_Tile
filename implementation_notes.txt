@@ -1,0 +1,11 @@
+Implementation Notes:
+- Setting --inet4-only option on wget, sdo.gsfc.nasa.gov does not seem to allow copying via IPv6, connections time out
+- To set up the HyperPixel on Raspbian lite, must manually install the drivers and choose Pi 3 during install
+	- https://github.com/pimoroni/hyperpixel4/issues/185
+- PIGPIO allows for control of the back light using the pigs hp 19 100 50000 command
+	- Setting the duty cycle (final value in command) controls the backlight
+		- Going too low completely turns off the backlight
+- FBI is forced to run in TTY2 using the -T 2 option
+	- This allows the script to keep running in the ssh window without interruption by FBI
+- Using root crontab (accessed using sudo crontab -e) to run sdo_auto_start.sh at reboot
+	- The sdo_auto_start.sh script is configured for running in ALL CHANNEL DYNAMIC mode at 512 resolution
